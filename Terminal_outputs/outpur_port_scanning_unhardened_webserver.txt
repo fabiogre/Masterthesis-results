@@ -1,0 +1,23 @@
+root@kali:~#  nmap -sC -sV -oN nmap/initial2 10.4.2.167
+Starting Nmap 7.94 ( https://nmap.org ) at 2023-08-30 09:26 UTC
+Nmap scan report for 10.4.2.167
+Host is up (0.000070s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey:
+|   2048 e5:4c:de:54:af:58:18:16:7b:de:0d:dc:ca:27:b6:74 (RSA)
+|   256 97:fd:13:26:7a:90:97:1c:4f:c0:2f:bc:e9:5e:4a:c1 (ECDSA)
+|_  256 2b:81:23:48:ed:81:56:ae:d3:5a:58:57:71:51:87:b4 (ED25519)
+80/tcp   open  http    Apache httpd 2.4.6 ((CentOS) PHP/7.4.33)
+| http-cookie-flags:
+|   /:
+|     PHPSESSID:
+|_      httponly flag not set
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+|_http-server-header: Apache/2.4.6 (CentOS) PHP/7.4.33
+3306/tcp open  mysql   MariaDB (unauthorized)
+MAC Address: 52:54:00:46:BF:6C (QEMU virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 20.01 seconds

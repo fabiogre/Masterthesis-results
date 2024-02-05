@@ -1,0 +1,2436 @@
+┌──(kali㉿kali)-[~]
+└─$ hashcat -m 1800 -a 0 -o crackedpasswords.txt hashes.txt /usr/share/wordlists/metasploit/common_roots.txt --potfile-disable
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 3.1+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 15.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: pthread-sandybridge-Intel Xeon E312xx (Sandy Bridge, IBRS update), 2914/5893 MB (1024 MB allocatable), 2MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Single-Hash
+* Single-Salt
+* Uses-64-Bit
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Hardware monitoring interface not found on your system.
+Watchdog: Temperature abort trigger disabled.
+
+Host memory required for this attack: 0 MB
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/common_roots.txt
+* Passwords.: 4726
+* Bytes.....: 37007
+* Keyspace..: 4726
+* Runtime...: 0 secs
+
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:24:44 2023 (3 secs)
+Time.Estimated...: Wed Nov 29 09:24:47 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/common_roots.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      623 H/s (10.15ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 1/1 (100.00%) Digests (total), 1/1 (100.00%) Digests (new)
+Progress.........: 1728/4726 (36.56%)
+Rejected.........: 0/1728 (0.00%)
+Restore.Point....: 1696/4726 (35.89%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: cdn123 -> charles
+
+Started: Wed Nov 29 09:24:42 2023
+Stopped: Wed Nov 29 09:24:49 2023
+
+┌──(kali㉿kali)-[~]
+└─$ cat crackedpasswords.txt
+$6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8yeTtknt83.h.D0zU.q8TddaqAd2vSRIjPDsR0E9ebP/RDjGz.:centos
+
+┌──(kali㉿kali)-[~]
+└─$ sudo vi /usr/share/wordlists/metasploit/common_roots.txt
+
+┌──(kali㉿kali)-[~]
+└─$ hashcat -m 1800 -a 0 -o crackedpasswords.txt hashes.txt /usr/share/wordlists/metasploit/* --potfile-disable
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 3.1+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 15.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: pthread-sandybridge-Intel Xeon E312xx (Sandy Bridge, IBRS update), 2914/5893 MB (1024 MB allocatable), 2MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 1 digests; 1 unique digests, 1 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Single-Hash
+* Single-Salt
+* Uses-64-Bit
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Hardware monitoring interface not found on your system.
+Watchdog: Temperature abort trigger disabled.
+
+Host memory required for this attack: 0 MB
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/adobe_top100_pass.txt
+* Passwords.: 100
+* Bytes.....: 791
+* Keyspace..: 100
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:07 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:07 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/adobe_top100_pass.txt)
+Guess.Queue......: 1/73 (1.37%)
+Speed.#1.........:      622 H/s (1.97ms) @ Accel:512 Loops:64 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 100/100 (100.00%)
+Rejected.........: 0/100 (0.00%)
+Restore.Point....: 100/100 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 123456 -> snoopy1
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/av_hips_executables.txt
+* Passwords.: 623
+* Bytes.....: 7706
+* Keyspace..: 623
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:07 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:26:08 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/av_hips_executables.txt)
+Guess.Queue......: 2/73 (2.74%)
+Speed.#1.........:      621 H/s (9.87ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 623/623 (100.00%)
+Rejected.........: 0/623 (0.00%)
+Restore.Point....: 623/623 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: supporter5.exe -> zonealarm.exe
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/av-update-urls.txt
+* Passwords.: 28
+* Bytes.....: 754
+* Keyspace..: 28
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:08 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:08 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/av-update-urls.txt)
+Guess.Queue......: 3/73 (4.11%)
+Speed.#1.........:      428 H/s (12.88ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 28/28 (100.00%)
+Rejected.........: 0/28 (0.00%)
+Restore.Point....: 28/28 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: www.es-web.sophos.com -> forefrontdl.microsoft.com
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/burnett_top_500.txt
+* Passwords.: 500
+* Bytes.....: 3585
+* Keyspace..: 500
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:08 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:26:09 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/burnett_top_500.txt)
+Guess.Queue......: 4/73 (5.48%)
+Speed.#1.........:      639 H/s (9.68ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 500/500 (100.00%)
+Rejected.........: 0/500 (0.00%)
+Restore.Point....: 500/500 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: yankee -> buffalo
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/burnett_top_1024.txt
+* Passwords.: 1024
+* Bytes.....: 7418
+* Keyspace..: 1024
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:09 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:26:11 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/burnett_top_1024.txt)
+Guess.Queue......: 5/73 (6.85%)
+Speed.#1.........:      633 H/s (9.92ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1024/1024 (100.00%)
+Rejected.........: 0/1024 (0.00%)
+Restore.Point....: 1024/1024 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: pussycat -> alabama
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/can_flood_frames.txt
+* Passwords.: 4
+* Bytes.....: 48
+* Keyspace..: 4
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:11 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:11 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/can_flood_frames.txt)
+Guess.Queue......: 6/73 (8.22%)
+Speed.#1.........:      579 H/s (1.26ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 4/4 (100.00%)
+Rejected.........: 0/4 (0.00%)
+Restore.Point....: 4/4 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 244+0000009999 -> 19b+000010
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/cms400net_default_userpass.txt
+* Passwords.: 14
+* Bytes.....: 236
+* Keyspace..: 14
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:11 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:11 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/cms400net_default_userpass.txt)
+Guess.Queue......: 7/73 (9.59%)
+Speed.#1.........:      527 H/s (0.62ms) @ Accel:256 Loops:128 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 14/14 (100.00%)
+Rejected.........: 0/14 (0.00%)
+Restore.Point....: 14/14 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin admin -> west west
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/common_roots.txt
+* Passwords.: 4725
+* Bytes.....: 37000
+* Keyspace..: 4725
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:11 2023 (8 secs)
+Time.Estimated...: Wed Nov 29 09:26:19 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/common_roots.txt)
+Guess.Queue......: 8/73 (10.96%)
+Speed.#1.........:      614 H/s (9.91ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 4725/4725 (100.00%)
+Rejected.........: 0/4725 (0.00%)
+Restore.Point....: 4725/4725 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: zaq1xsw2cde3 -> vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/dangerzone_a.txt
+* Passwords.: 1410
+* Bytes.....: 11349
+* Keyspace..: 1410
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:19 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:26:21 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/dangerzone_a.txt)
+Guess.Queue......: 9/73 (12.33%)
+Speed.#1.........:      628 H/s (9.26ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1410/1410 (100.00%)
+Rejected.........: 0/1410 (0.00%)
+Restore.Point....: 1410/1410 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: FRANTIC -> KLUTZY
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/dangerzone_b.txt
+* Passwords.: 305
+* Bytes.....: 2166
+* Keyspace..: 305
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:21 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:26:22 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/dangerzone_b.txt)
+Guess.Queue......: 10/73 (13.70%)
+Speed.#1.........:      620 H/s (8.05ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 305/305 (100.00%)
+Rejected.........: 0/305 (0.00%)
+Restore.Point....: 305/305 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: AFTERNOON -> MINE
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/db2_default_pass.txt
+* Passwords.: 9
+* Bytes.....: 68
+* Keyspace..: 9
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:22 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:22 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/db2_default_pass.txt)
+Guess.Queue......: 11/73 (15.07%)
+Speed.#1.........:      540 H/s (1.54ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 9/9 (100.00%)
+Rejected.........: 0/9 (0.00%)
+Restore.Point....: 9/9 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: db2inst1 ->
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/db2_default_userpass.txt
+* Passwords.: 8
+* Bytes.....: 124
+* Keyspace..: 8
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:22 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:22 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/db2_default_userpass.txt)
+Guess.Queue......: 12/73 (16.44%)
+Speed.#1.........:      488 H/s (0.35ms) @ Accel:256 Loops:128 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 8/8 (100.00%)
+Rejected.........: 0/8 (0.00%)
+Restore.Point....: 8/8 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: db2inst1 db2inst1 ->
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/db2_default_user.txt
+* Passwords.: 5
+* Bytes.....: 41
+* Keyspace..: 5
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:22 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:22 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/db2_default_user.txt)
+Guess.Queue......: 13/73 (17.81%)
+Speed.#1.........:      482 H/s (1.85ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 5/5 (100.00%)
+Rejected.........: 0/5 (0.00%)
+Restore.Point....: 5/5 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: db2inst1 -> db2admin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt
+* Passwords.: 1244
+* Bytes.....: 9323
+* Keyspace..: 1244
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:22 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:26:24 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/default_pass_for_services_unhash.txt)
+Guess.Queue......: 14/73 (19.18%)
+Speed.#1.........:      603 H/s (10.12ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1244/1244 (100.00%)
+Rejected.........: 0/1244 (0.00%)
+Restore.Point....: 1244/1244 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: vizxv -> fucker
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/default_userpass_for_services_unhash.txt
+* Passwords.: 1821
+* Bytes.....: 23489
+* Keyspace..: 1821
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:24 2023 (3 secs)
+Time.Estimated...: Wed Nov 29 09:26:27 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/default_userpass_for_services_unhash.txt)
+Guess.Queue......: 15/73 (20.55%)
+Speed.#1.........:      592 H/s (10.08ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1821/1821 (100.00%)
+Rejected.........: 0/1821 (0.00%)
+Restore.Point....: 1821/1821 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root 123456 -> cmc password
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/default_users_for_services_unhash.txt
+* Passwords.: 920
+* Bytes.....: 6819
+* Keyspace..: 920
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:27 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:26:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/default_users_for_services_unhash.txt)
+Guess.Queue......: 16/73 (21.92%)
+Speed.#1.........:      609 H/s (10.02ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 920/920 (100.00%)
+Rejected.........: 0/920 (0.00%)
+Restore.Point....: 920/920 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ANDY -> mother
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/dlink_telnet_backdoor_userpass.txt
+* Passwords.: 14
+* Bytes.....: 496
+* Keyspace..: 14
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/dlink_telnet_backdoor_userpass.txt)
+Guess.Queue......: 17/73 (23.29%)
+Speed.#1.........:      387 H/s (7.09ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 14/14 (100.00%)
+Rejected.........: 0/14 (0.00%)
+Restore.Point....: 14/14 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: Alphanetworks wrgg19_c_dlwbr_dir300 -> Alphanetworks wrgn39_dlob.hans_dir645_V1
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/grafana_plugins.txt
+* Passwords.: 40
+* Bytes.....: 379
+* Keyspace..: 40
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/grafana_plugins.txt)
+Guess.Queue......: 18/73 (24.66%)
+Speed.#1.........:      573 H/s (6.84ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 40/40 (100.00%)
+Rejected.........: 0/40 (0.00%)
+Restore.Point....: 40/40 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: alertlist -> zipkin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/hci_oracle_passwords.csv
+* Passwords.: 65
+* Bytes.....: 1354
+* Keyspace..: 65
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/hci_oracle_passwords.csv)
+Guess.Queue......: 19/73 (26.03%)
+Speed.#1.........:      449 H/s (7.05ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 65/65 (100.00%)
+Rejected.........: 0/65 (0.00%)
+Restore.Point....: 65/65 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 1,1,AMBU,hacschema -> 1,1,RUNTIME_A_USER,owb
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/http_default_pass.txt
+* Passwords.: 19
+* Bytes.....: 127
+* Keyspace..: 19
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/http_default_pass.txt)
+Guess.Queue......: 20/73 (27.40%)
+Speed.#1.........:      601 H/s (6.18ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 19/19 (100.00%)
+Rejected.........: 0/19 (0.00%)
+Restore.Point....: 19/19 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin -> vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/http_default_userpass.txt
+* Passwords.: 11
+* Bytes.....: 171
+* Keyspace..: 11
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/http_default_userpass.txt)
+Guess.Queue......: 21/73 (28.77%)
+Speed.#1.........:      564 H/s (3.74ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 11/11 (100.00%)
+Rejected.........: 0/11 (0.00%)
+Restore.Point....: 11/11 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: connect connect -> vagrant vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/http_default_users.txt
+* Passwords.: 14
+* Bytes.....: 100
+* Keyspace..: 14
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/http_default_users.txt)
+Guess.Queue......: 22/73 (30.14%)
+Speed.#1.........:      620 H/s (4.36ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 14/14 (100.00%)
+Rejected.........: 0/14 (0.00%)
+Restore.Point....: 14/14 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin -> vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/http_owa_common.txt
+* Passwords.: 9
+* Bytes.....: 100
+* Keyspace..: 9
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/http_owa_common.txt)
+Guess.Queue......: 23/73 (31.51%)
+Speed.#1.........:      482 H/s (1.74ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 9/9 (100.00%)
+Rejected.........: 0/9 (0.00%)
+Restore.Point....: 9/9 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: aspnet_client/ -> Rpc/
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/idrac_default_pass.txt
+* Passwords.: 4
+* Bytes.....: 32
+* Keyspace..: 4
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/idrac_default_pass.txt)
+Guess.Queue......: 24/73 (32.88%)
+Speed.#1.........:      578 H/s (1.24ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 4/4 (100.00%)
+Rejected.........: 0/4 (0.00%)
+Restore.Point....: 4/4 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: calvin -> user1234
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/idrac_default_user.txt
+* Passwords.: 3
+* Bytes.....: 17
+* Keyspace..: 3
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/idrac_default_user.txt)
+Guess.Queue......: 25/73 (34.25%)
+Speed.#1.........:      253 H/s (0.23ms) @ Accel:256 Loops:128 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 3/3 (100.00%)
+Rejected.........: 0/3 (0.00%)
+Restore.Point....: 3/3 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root -> admin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/ipmi_passwords.txt
+* Passwords.: 1000
+* Bytes.....: 8670
+* Keyspace..: 1000
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:30 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:26:32 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/ipmi_passwords.txt)
+Guess.Queue......: 26/73 (35.62%)
+Speed.#1.........:      623 H/s (9.74ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1000/1000 (100.00%)
+Rejected.........: 0/1000 (0.00%)
+Restore.Point....: 1000/1000 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 0407056 -> !@#QWE123qwe
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/ipmi_users.txt
+* Passwords.: 7
+* Bytes.....: 50
+* Keyspace..: 7
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:32 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:32 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/ipmi_users.txt)
+Guess.Queue......: 27/73 (36.99%)
+Speed.#1.........:      529 H/s (2.46ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 7/7 (100.00%)
+Rejected.........: 0/7 (0.00%)
+Restore.Point....: 7/7 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ADMIN -> Admin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/joomla.txt
+* Passwords.: 1544
+* Bytes.....: 50338
+* Keyspace..: 1543
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:32 2023 (4 secs)
+Time.Estimated...: Wed Nov 29 09:26:36 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/joomla.txt)
+Guess.Queue......: 28/73 (38.36%)
+Speed.#1.........:      395 H/s (6.69ms) @ Accel:512 Loops:64 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1543/1543 (100.00%)
+Rejected.........: 0/1543 (0.00%)
+Restore.Point....: 1543/1543 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: plugins/editors/tinymce/jscripts/tiny_mce/plugins/tinybrowser/ -> web/index.php?option=com_rokmodule&tmpl=component&type=raw&mo                                                                                dule=1'
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/keyboard-patterns.txt
+* Passwords.: 20
+* Bytes.....: 177
+* Keyspace..: 20
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:36 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:36 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/keyboard-patterns.txt)
+Guess.Queue......: 29/73 (39.73%)
+Speed.#1.........:      630 H/s (3.07ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 20/20 (100.00%)
+Rejected.........: 0/20 (0.00%)
+Restore.Point....: 20/20 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: qwerty -> adgjmptw
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/lync_subdomains.txt
+* Passwords.: 10
+* Bytes.....: 84
+* Keyspace..: 10
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:36 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:36 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/lync_subdomains.txt)
+Guess.Queue......: 30/73 (41.10%)
+Speed.#1.........:      615 H/s (1.54ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 10/10 (100.00%)
+Rejected.........: 0/10 (0.00%)
+Restore.Point....: 10/10 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: access -> meet
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/malicious_urls.txt
+* Passwords.: 3968
+* Bytes.....: 69823
+* Keyspace..: 3968
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:36 2023 (8 secs)
+Time.Estimated...: Wed Nov 29 09:26:44 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/malicious_urls.txt)
+Guess.Queue......: 31/73 (42.47%)
+Speed.#1.........:      535 H/s (12.22ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 3968/3968 (100.00%)
+Rejected.........: 0/3968 (0.00%)
+Restore.Point....: 3968/3968 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: zapto.org -> zydsoft.com
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/mirai_pass.txt
+* Passwords.: 43
+* Bytes.....: 306
+* Keyspace..: 43
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:44 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:44 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/mirai_pass.txt)
+Guess.Queue......: 32/73 (43.84%)
+Speed.#1.........:      630 H/s (6.71ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 43/43 (100.00%)
+Rejected.........: 0/43 (0.00%)
+Restore.Point....: 43/43 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:  -> Zte521
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/mirai_user_pass.txt
+* Passwords.: 60
+* Bytes.....: 768
+* Keyspace..: 60
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:44 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:44 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/mirai_user_pass.txt)
+Guess.Queue......: 33/73 (45.21%)
+Speed.#1.........:      621 H/s (9.49ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 60/60 (100.00%)
+Rejected.........: 0/60 (0.00%)
+Restore.Point....: 60/60 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root xc3511 -> mother fucker
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/mirai_user.txt
+* Passwords.: 15
+* Bytes.....: 115
+* Keyspace..: 15
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:44 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:44 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/mirai_user.txt)
+Guess.Queue......: 34/73 (46.58%)
+Speed.#1.........:      562 H/s (1.25ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 15/15 (100.00%)
+Rejected.........: 0/15 (0.00%)
+Restore.Point....: 15/15 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 666666 -> user
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/multi_vendor_cctv_dvr_pass.txt
+* Passwords.: 66
+* Bytes.....: 383
+* Keyspace..: 66
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:44 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:44 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/multi_vendor_cctv_dvr_pass.txt)
+Guess.Queue......: 35/73 (47.95%)
+Speed.#1.........:      568 H/s (7.59ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 66/66 (100.00%)
+Rejected.........: 0/66 (0.00%)
+Restore.Point....: 66/66 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: administrator -> root
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/multi_vendor_cctv_dvr_users.txt
+* Passwords.: 2
+* Bytes.....: 11
+* Keyspace..: 2
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:45 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:45 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/multi_vendor_cctv_dvr_users.txt)
+Guess.Queue......: 36/73 (49.32%)
+Speed.#1.........:      541 H/s (0.63ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 2/2 (100.00%)
+Rejected.........: 0/2 (0.00%)
+Restore.Point....: 2/2 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin -> user
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/named_pipes.txt
+* Passwords.: 25
+* Bytes.....: 281
+* Keyspace..: 25
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:45 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:26:45 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/named_pipes.txt)
+Guess.Queue......: 37/73 (50.68%)
+Speed.#1.........:      513 H/s (4.74ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 25/25 (100.00%)
+Rejected.........: 0/25 (0.00%)
+Restore.Point....: 25/25 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: netlogon -> db2remotecmd
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/namelist.txt
+* Passwords.: 1909
+* Bytes.....: 11966
+* Keyspace..: 1909
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:45 2023 (3 secs)
+Time.Estimated...: Wed Nov 29 09:26:48 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/namelist.txt)
+Guess.Queue......: 38/73 (52.05%)
+Speed.#1.........:      612 H/s (10.00ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1909/1909 (100.00%)
+Rejected.........: 0/1909 (0.00%)
+Restore.Point....: 1909/1909 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ws2 -> zw
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/oracle_default_hashes.txt
+* Passwords.: 550
+* Bytes.....: 16767
+* Keyspace..: 550
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:48 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:26:49 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/oracle_default_hashes.txt)
+Guess.Queue......: 39/73 (53.42%)
+Speed.#1.........:      388 H/s (14.05ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 550/550 (100.00%)
+Rejected.........: 0/550 (0.00%)
+Restore.Point....: 550/550 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: SAP,6071992,B1344DC1B5F3D903 -> SYSMAN,OEM_TEMP,639C32A115D2CA57
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/oracle_default_passwords.csv
+* Passwords.: 598
+* Bytes.....: 59294
+* Keyspace..: 598
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:49 2023 (3 secs)
+Time.Estimated...: Wed Nov 29 09:26:52 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/oracle_default_passwords.csv)
+Guess.Queue......: 40/73 (54.79%)
+Speed.#1.........:      268 H/s (22.81ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 598/598 (100.00%)
+Rejected.........: 0/598 (0.00%)
+Restore.Point....: 598/598 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: Oracle,3,SWUSER,SWUSER,783E58C29D2FC7E1, -> Oracle,1,SYSMAN,OEM_TEMP,639C32A115D2CA57,SYSMAN is the management account for Orac                                                                                le Enterprise Mananger. It is used as access to all databases that are managed by it. It might be possible to access a data in your databases.
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/oracle_default_userpass.txt
+* Passwords.: 568
+* Bytes.....: 7681
+* Keyspace..: 568
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:52 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:26:53 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/oracle_default_userpass.txt)
+Guess.Queue......: 41/73 (56.16%)
+Speed.#1.........:      567 H/s (10.79ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 568/568 (100.00%)
+Rejected.........: 0/568 (0.00%)
+Restore.Point....: 568/568 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: starter starter -> sysman oem_temp
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/password.lst
+* Passwords.: 88398
+* Bytes.....: 820674
+* Keyspace..: 88398
+* Runtime...: 0 secs
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 7 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (1 min, 15 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.10ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 41440/88398 (46.88%)
+Rejected.........: 0/41440 (0.00%)
+Restore.Point....: 41440/88398 (46.88%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: kerala -> kerrya
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 14 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (1 min, 8 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.10ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 46016/88398 (52.06%)
+Rejected.........: 0/46016 (0.00%)
+Restore.Point....: 46016/88398 (52.06%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: magging -> magnet
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 17 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (1 min, 5 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.23ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 47616/88398 (53.87%)
+Rejected.........: 0/47616 (0.00%)
+Restore.Point....: 47616/88398 (53.87%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: maximilianus -> mayflies
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 19 secs)
+Time.Estimated...: Wed Nov 29 09:29:16 2023 (1 min, 4 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.13ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 48736/88398 (55.13%)
+Rejected.........: 0/48736 (0.00%)
+Restore.Point....: 48736/88398 (55.13%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:3072-4096
+Candidate.Engine.: Device Generator
+Candidates.#1....: mickelson -> microcosm
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 20 secs)
+Time.Estimated...: Wed Nov 29 09:29:16 2023 (1 min, 3 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.11ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 49344/88398 (55.82%)
+Rejected.........: 0/49344 (0.00%)
+Restore.Point....: 49344/88398 (55.82%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:1024-2048
+Candidate.Engine.: Device Generator
+Candidates.#1....: miramar -> misalignment
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 20 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (1 min, 2 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.09ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 49856/88398 (56.40%)
+Rejected.........: 0/49856 (0.00%)
+Restore.Point....: 49856/88398 (56.40%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: modifiability -> modulation
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 21 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (1 min, 1 sec)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      619 H/s (10.07ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 50176/88398 (56.76%)
+Rejected.........: 0/50176 (0.00%)
+Restore.Point....: 50176/88398 (56.76%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: monism -> monodic
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 29 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (53 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      620 H/s (10.06ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 54944/88398 (62.16%)
+Rejected.........: 0/54944 (0.00%)
+Restore.Point....: 54944/88398 (62.16%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:3072-4096
+Candidate.Engine.: Device Generator
+Candidates.#1....: oiler -> oklahoma
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => b
+
+Next dictionary / mask in queue selected. Bypassing current one.
+
+Session..........: hashcat
+Status...........: Bypass
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:26:53 2023 (1 min, 31 secs)
+Time.Estimated...: Wed Nov 29 09:29:15 2023 (51 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/password.lst)
+Guess.Queue......: 42/73 (57.53%)
+Speed.#1.........:      620 H/s (10.09ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 56480/88398 (63.89%)
+Rejected.........: 0/56480 (0.00%)
+Restore.Point....: 56480/88398 (63.89%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:1024-2048
+Candidate.Engine.: Device Generator
+Candidates.#1....: paceman -> packer
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/piata_ssh_userpass.txt
+* Passwords.: 917
+* Bytes.....: 12098
+* Keyspace..: 917
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:24 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:28:26 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/piata_ssh_userpass.txt)
+Guess.Queue......: 43/73 (58.90%)
+Speed.#1.........:      604 H/s (10.09ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 917/917 (100.00%)
+Rejected.........: 0/917 (0.00%)
+Restore.Point....: 917/917 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root cisco -> root nimda
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/postgres_default_pass.txt
+* Passwords.: 5
+* Bytes.....: 31
+* Keyspace..: 5
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:26 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:26 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/postgres_default_pass.txt)
+Guess.Queue......: 44/73 (60.27%)
+Speed.#1.........:      432 H/s (0.23ms) @ Accel:256 Loops:128 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 5/5 (100.00%)
+Rejected.........: 0/5 (0.00%)
+Restore.Point....: 5/5 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4992-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:  -> admin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/postgres_default_userpass.txt
+* Passwords.: 5
+* Bytes.....: 78
+* Keyspace..: 5
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:26 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:26 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/postgres_default_userpass.txt)
+Guess.Queue......: 45/73 (61.64%)
+Speed.#1.........:      494 H/s (1.86ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 5/5 (100.00%)
+Rejected.........: 0/5 (0.00%)
+Restore.Point....: 5/5 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: postgres postgres -> admin password
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/postgres_default_user.txt
+* Passwords.: 4
+* Bytes.....: 22
+* Keyspace..: 4
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:26 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:26 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/postgres_default_user.txt)
+Guess.Queue......: 46/73 (63.01%)
+Speed.#1.........:      574 H/s (1.25ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 4/4 (100.00%)
+Rejected.........: 0/4 (0.00%)
+Restore.Point....: 4/4 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....:  -> admin
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/root_userpass.txt
+* Passwords.: 52
+* Bytes.....: 644
+* Keyspace..: 52
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:26 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:26 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/root_userpass.txt)
+Guess.Queue......: 47/73 (64.38%)
+Speed.#1.........:      634 H/s (4.02ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 52/52 (100.00%)
+Rejected.........: 0/52 (0.00%)
+Restore.Point....: 52/52 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root -> root vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/routers_userpass.txt
+* Passwords.: 508
+* Bytes.....: 7041
+* Keyspace..: 508
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:26 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:27 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/routers_userpass.txt)
+Guess.Queue......: 48/73 (65.75%)
+Speed.#1.........:      598 H/s (10.41ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 508/508 (100.00%)
+Rejected.........: 0/508 (0.00%)
+Restore.Point....: 508/508 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: support 123 -> zyfwp PrOw!aN_fXp
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/rpc_names.txt
+* Passwords.: 634
+* Bytes.....: 17095
+* Keyspace..: 634
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:27 2023 (2 secs)
+Time.Estimated...: Wed Nov 29 09:28:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/rpc_names.txt)
+Guess.Queue......: 49/73 (67.12%)
+Speed.#1.........:      437 H/s (14.28ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 634/634 (100.00%)
+Rejected.........: 0/634 (0.00%)
+Restore.Point....: 634/634 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: $HEX[6e6462736572766572343209353336383730393836] -> $HEX[747473657373696f6e093133343231373732373909232053756e20536f6c6172697320                                                                                7570746f20322e36]
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/rservices_from_users.txt
+* Passwords.: 7
+* Bytes.....: 36
+* Keyspace..: 7
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/rservices_from_users.txt)
+Guess.Queue......: 50/73 (68.49%)
+Speed.#1.........:      517 H/s (1.24ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 7/7 (100.00%)
+Rejected.........: 0/7 (0.00%)
+Restore.Point....: 7/7 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: root -> mail
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sap_common.txt
+* Passwords.: 10
+* Bytes.....: 117
+* Keyspace..: 10
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sap_common.txt)
+Guess.Queue......: 51/73 (69.86%)
+Speed.#1.........:      601 H/s (1.56ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 10/10 (100.00%)
+Rejected.........: 0/10 (0.00%)
+Restore.Point....: 10/10 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: sapservice<SAPSID> -> ora<SAPSID>
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sap_default.txt
+* Passwords.: 27
+* Bytes.....: 448
+* Keyspace..: 27
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:29 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:29 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sap_default.txt)
+Guess.Queue......: 52/73 (71.23%)
+Speed.#1.........:      551 H/s (4.79ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 27/27 (100.00%)
+Rejected.........: 0/27 (0.00%)
+Restore.Point....: 27/27 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: SAP* 06071992 -> SMD_AGT init1234
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sap_icm_paths.txt
+* Passwords.: 549
+* Bytes.....: 15713
+* Keyspace..: 549
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:29 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:30 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sap_icm_paths.txt)
+Guess.Queue......: 53/73 (72.60%)
+Speed.#1.........:      416 H/s (14.24ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 549/549 (100.00%)
+Rejected.........: 0/549 (0.00%)
+Restore.Point....: 549/549 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: /wsnavigator/jsps/sendrequest.jsp -> /wssproc/ssl
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/scada_default_userpass.txt
+* Passwords.: 55
+* Bytes.....: 816
+* Keyspace..: 55
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:30 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:31 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/scada_default_userpass.txt)
+Guess.Queue......: 54/73 (73.97%)
+Speed.#1.........:      542 H/s (10.00ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 55/55 (100.00%)
+Rejected.........: 0/55 (0.00%)
+Restore.Point....: 55/55 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: adm adm -> wsupgrade wsupgrade
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sensitive_files.txt
+* Passwords.: 16
+* Bytes.....: 217
+* Keyspace..: 16
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:31 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:31 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sensitive_files.txt)
+Guess.Queue......: 55/73 (75.34%)
+Speed.#1.........:      628 H/s (4.94ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 16/16 (100.00%)
+Rejected.........: 0/16 (0.00%)
+Restore.Point....: 16/16 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: /etc/passwd -> /proc/version
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sensitive_files_win.txt
+* Passwords.: 7
+* Bytes.....: 176
+* Keyspace..: 7
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:31 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:31 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sensitive_files_win.txt)
+Guess.Queue......: 56/73 (76.71%)
+Speed.#1.........:      420 H/s (0.77ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 7/7 (100.00%)
+Rejected.........: 0/7 (0.00%)
+Restore.Point....: 7/7 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: C:\boot.ini -> C:\winnt\system32\config\SAM
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/sid.txt
+* Passwords.: 576
+* Bytes.....: 3838
+* Keyspace..: 576
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:31 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:32 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/sid.txt)
+Guess.Queue......: 57/73 (78.08%)
+Speed.#1.........:      625 H/s (10.12ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 576/576 (100.00%)
+Rejected.........: 0/576 (0.00%)
+Restore.Point....: 576/576 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: W102 ->
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/snmp_default_pass.txt
+* Passwords.: 120
+* Bytes.....: 844
+* Keyspace..: 120
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:32 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:32 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/snmp_default_pass.txt)
+Guess.Queue......: 58/73 (79.45%)
+Speed.#1.........:      636 H/s (9.30ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 120/120 (100.00%)
+Rejected.........: 0/120 (0.00%)
+Restore.Point....: 120/120 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: public ->
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/telerik_ui_asp_net_ajax_versions.txt
+* Passwords.: 100
+* Bytes.....: 1168
+* Keyspace..: 100
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:32 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:32 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/telerik_ui_asp_net_ajax_versions.txt)
+Guess.Queue......: 59/73 (80.82%)
+Speed.#1.........:      613 H/s (8.02ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 100/100 (100.00%)
+Rejected.........: 0/100 (0.00%)
+Restore.Point....: 100/100 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 2011.1315 -> 2007.1423
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/telnet_cdata_ftth_backdoor_userpass.txt
+* Passwords.: 4
+* Bytes.....: 53
+* Keyspace..: 4
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:33 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:33 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/telnet_cdata_ftth_backdoor_userpass.txt)
+Guess.Queue......: 60/73 (82.19%)
+Speed.#1.........:      478 H/s (0.33ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 4/4 (100.00%)
+Rejected.........: 0/4 (0.00%)
+Restore.Point....: 4/4 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: suma123 panger123 -> guest
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/tftp.txt
+* Passwords.: 248
+* Bytes.....: 3426
+* Keyspace..: 248
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:33 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:33 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/tftp.txt)
+Guess.Queue......: 61/73 (83.56%)
+Speed.#1.........:      588 H/s (10.38ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 248/248 (100.00%)
+Rejected.........: 0/248 (0.00%)
+Restore.Point....: 248/248 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: startup.bin -> XMLDefault.cnf.xml
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/tomcat_mgr_default_pass.txt
+* Passwords.: 20
+* Bytes.....: 153
+* Keyspace..: 20
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:33 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:33 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/tomcat_mgr_default_pass.txt)
+Guess.Queue......: 62/73 (84.93%)
+Speed.#1.........:      534 H/s (7.29ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 20/20 (100.00%)
+Rejected.........: 0/20 (0.00%)
+Restore.Point....: 20/20 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin -> xampp
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/tomcat_mgr_default_userpass.txt
+* Passwords.: 33
+* Bytes.....: 456
+* Keyspace..: 33
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:33 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:33 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/tomcat_mgr_default_userpass.txt)
+Guess.Queue......: 63/73 (86.30%)
+Speed.#1.........:      583 H/s (5.36ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 33/33 (100.00%)
+Rejected.........: 0/33 (0.00%)
+Restore.Point....: 33/33 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: tomcat changethis -> tomcat changethis
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/tomcat_mgr_default_users.txt
+* Passwords.: 13
+* Bytes.....: 84
+* Keyspace..: 13
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:33 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:34 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/tomcat_mgr_default_users.txt)
+Guess.Queue......: 64/73 (87.67%)
+Speed.#1.........:      560 H/s (4.45ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 13/13 (100.00%)
+Rejected.........: 0/13 (0.00%)
+Restore.Point....: 13/13 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: admin -> xampp
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/unix_passwords.txt
+* Passwords.: 1009
+* Bytes.....: 7883
+* Keyspace..: 1009
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:34 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:35 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/unix_passwords.txt)
+Guess.Queue......: 65/73 (89.04%)
+Speed.#1.........:      623 H/s (9.98ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1009/1009 (100.00%)
+Rejected.........: 0/1009 (0.00%)
+Restore.Point....: 1009/1009 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: crazy -> vagrant
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/unix_users.txt
+* Passwords.: 168
+* Bytes.....: 1275
+* Keyspace..: 168
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:35 2023 (1 sec)
+Time.Estimated...: Wed Nov 29 09:28:36 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/unix_users.txt)
+Guess.Queue......: 66/73 (90.41%)
+Speed.#1.........:      599 H/s (9.20ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 168/168 (100.00%)
+Rejected.........: 0/168 (0.00%)
+Restore.Point....: 168/168 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: web -> zabbix
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/vnc_passwords.txt
+* Passwords.: 1
+* Bytes.....: 9
+* Keyspace..: 1
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:36 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:28:36 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/vnc_passwords.txt)
+Guess.Queue......: 67/73 (91.78%)
+Speed.#1.........:      261 H/s (0.63ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 1/1 (100.00%)
+Rejected.........: 0/1 (0.00%)
+Restore.Point....: 1/1 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: password -> password
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/vxworks_collide_20.txt
+* Passwords.: 20000
+* Bytes.....: 575885
+* Keyspace..: 20000
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:28:36 2023 (52 secs)
+Time.Estimated...: Wed Nov 29 09:29:28 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/vxworks_collide_20.txt)
+Guess.Queue......: 68/73 (93.15%)
+Speed.#1.........:      386 H/s (16.49ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 20000/20000 (100.00%)
+Rejected.........: 0/20000 (0.00%)
+Restore.Point....: 20000/20000 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: $HEX[32313135367c64625253537a5379657cfdffffffffffffffffffffff5f00] -> $HEX[32313138377c52645262797a625251627ceeffffffffffffffff                                                                                ffffff6300]
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/vxworks_common_20.txt
+* Passwords.: 20000
+* Bytes.....: 229871
+* Keyspace..: 20000
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:29:28 2023 (32 secs)
+Time.Estimated...: Wed Nov 29 09:30:00 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/vxworks_common_20.txt)
+Guess.Queue......: 69/73 (94.52%)
+Speed.#1.........:      613 H/s (9.90ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 20000/20000 (100.00%)
+Rejected.........: 0/20000 (0.00%)
+Restore.Point....: 20000/20000 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: $HEX[fdffffffffffffffffffffff5f] -> $HEX[eeffffffffffffffffffffff63]
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/wp-exploitable-plugins.txt
+* Passwords.: 61
+* Bytes.....: 1188
+* Keyspace..: 61
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:30:00 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:30:00 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/wp-exploitable-plugins.txt)
+Guess.Queue......: 70/73 (95.89%)
+Speed.#1.........:      487 H/s (12.13ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 61/61 (100.00%)
+Rejected.........: 0/61 (0.00%)
+Restore.Point....: 61/61 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: masterstudy-lms-learning-management-system -> file-manager-advanced-shortcode
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/wp-exploitable-themes.txt
+* Passwords.: 2
+* Bytes.....: 22
+* Keyspace..: 2
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:30:00 2023 (0 secs)
+Time.Estimated...: Wed Nov 29 09:30:00 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/wp-exploitable-themes.txt)
+Guess.Queue......: 71/73 (97.26%)
+Speed.#1.........:      381 H/s (0.17ms) @ Accel:128 Loops:256 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 2/2 (100.00%)
+Rejected.........: 0/2 (0.00%)
+Restore.Point....: 2/2 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4864-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: holding_pattern -> wplms
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/wp-plugins.txt
+* Passwords.: 97170
+* Bytes.....: 1984190
+* Keyspace..: 97170
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:30:00 2023 (3 mins, 18 secs)
+Time.Estimated...: Wed Nov 29 09:33:18 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/wp-plugins.txt)
+Guess.Queue......: 72/73 (98.63%)
+Speed.#1.........:      476 H/s (12.31ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 97170/97170 (100.00%)
+Rejected.........: 0/97170 (0.00%)
+Restore.Point....: 97170/97170 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ​​cdn-manager -> 豆瓣秀-for-wordpress
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/metasploit/wp-themes.txt
+* Passwords.: 24085
+* Bytes.....: 288665
+* Keyspace..: 24085
+* Runtime...: 0 secs
+
+Approaching final keyspace - workload adjusted.
+
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: $6$j4pHGtsC$2gLVNbgpur0dOPcnBc/zmFK9DH4OaUMT01Qu8ye...RDjGz.
+Time.Started.....: Wed Nov 29 09:33:18 2023 (41 secs)
+Time.Estimated...: Wed Nov 29 09:33:59 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/metasploit/wp-themes.txt)
+Guess.Queue......: 73/73 (100.00%)
+Speed.#1.........:      575 H/s (10.33ms) @ Accel:32 Loops:1024 Thr:1 Vec:4
+Recovered........: 0/1 (0.00%) Digests (total), 0/1 (0.00%) Digests (new)
+Progress.........: 24085/24085 (100.00%)
+Rejected.........: 0/24085 (0.00%)
+Restore.Point....: 24085/24085 (100.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: zupaya -> 科技博客三吉工社设计
+
+Started: Wed Nov 29 09:26:05 2023
+Stopped: Wed Nov 29 09:34:00 2023
+
+┌──(kali㉿kali)-[~]
+└─$ cat crackedpasswords.txt

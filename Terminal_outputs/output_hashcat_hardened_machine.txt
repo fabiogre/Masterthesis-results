@@ -1,0 +1,635 @@
+└─$ hashcat -m 1800 -a 0 -o crackedpasswords.txt hashes.txt /usr/share/wordlists/rockyou.txt
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 3.1+debian  Linux, None+Asserts, RELOC, SPIR, LLVM 15.0.6, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+==================================================================================================================================================
+* Device #1: pthread-sandybridge-Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz, 4306/8677 MB (2048 MB allocatable), 3MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+Hashes: 2 digests; 2 unique digests, 2 unique salts
+Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
+Rules: 1
+
+Optimizers applied:
+* Zero-Byte
+* Uses-64-Bit
+
+ATTENTION! Pure (unoptimized) backend kernels selected.
+Pure kernels can crack longer passwords, but drastically reduce performance.
+If you want to switch to optimized kernels, append -O to your commandline.
+See the above message to find out about the exact limits.
+
+Watchdog: Temperature abort trigger set to 90c
+
+INFO: Removed hash found as potfile entry.
+
+Host memory required for this attack: 0 MB
+
+Dictionary cache built:
+* Filename..: /usr/share/wordlists/rockyou.txt
+* Passwords.: 14344392
+* Bytes.....: 139921507
+* Keyspace..: 14344385
+* Runtime...: 2 secs
+
+Cracking performance lower than expected?                 
+
+* Append -O to the commandline.
+  This lowers the maximum supported password/salt length (usually down to 32).
+
+* Append -w 3 to the commandline.
+  This can cause your screen to lag.
+
+* Append -S to the commandline.
+  This has a drastic speed impact but can be better for specific attacks.
+  Typical scenarios are a small wordlist but a large ruleset.
+
+* Update your backend API runtime / driver the right way:
+  https://hashcat.net/faq/wrongdriver
+
+* Create more work items to make use of your parallelization power:
+  https://hashcat.net/faq/morework
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (2 mins, 57 secs)
+Time.Estimated...: Wed Jun 28 13:02:47 2023 (6 hours, 50 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      578 H/s (10.28ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 204288/28688770 (0.71%)
+Rejected.........: 0/204288 (0.00%)
+Restore.Point....: 102144/14344385 (0.71%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2048-2560
+Candidate.Engine.: Device Generator
+Candidates.#1....: chicken0 -> caseym
+Hardware.Mon.#1..: Util: 89%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (3 mins, 32 secs)
+Time.Estimated...: Wed Jun 28 13:01:09 2023 (6 hours, 48 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      580 H/s (11.23ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 245504/28688770 (0.86%)
+Rejected.........: 0/245504 (0.00%)
+Restore.Point....: 122752/14344385 (0.86%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2048-2560
+Candidate.Engine.: Device Generator
+Candidates.#1....: nani13 -> mugen
+Hardware.Mon.#1..: Util: 85%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (3 mins, 34 secs)
+Time.Estimated...: Wed Jun 28 13:01:04 2023 (6 hours, 48 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      580 H/s (10.28ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 248448/28688770 (0.87%)
+Rejected.........: 0/248448 (0.00%)
+Restore.Point....: 124224/14344385 (0.87%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ilovetweety -> hunterz
+Hardware.Mon.#1..: Util: 91%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (15 mins, 6 secs)
+Time.Estimated...: Wed Jun 28 13:21:58 2023 (6 hours, 57 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      551 H/s (10.29ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 1053056/28688770 (3.67%)
+Rejected.........: 0/1053056 (0.00%)
+Restore.Point....: 526528/14344385 (3.67%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: bugaboos -> buddyroo
+Hardware.Mon.#1..: Util: 93%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (15 mins, 34 secs)
+Time.Estimated...: Wed Jun 28 13:07:38 2023 (6 hours, 42 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      571 H/s (10.55ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 1085824/28688770 (3.78%)
+Rejected.........: 0/1085824 (0.00%)
+Restore.Point....: 542912/14344385 (3.78%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2560-3072
+Candidate.Engine.: Device Generator
+Candidates.#1....: Blackwell -> Balamory
+Hardware.Mon.#1..: Util: 88%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (20 mins, 40 secs)
+Time.Estimated...: Wed Jun 28 12:56:34 2023 (6 hours, 26 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      587 H/s (11.05ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 1445376/28688770 (5.04%)
+Rejected.........: 0/1445376 (0.00%)
+Restore.Point....: 722688/14344385 (5.04%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: 336339 -> 333333c
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 22 secs)
+Time.Estimated...: Wed Jun 28 13:08:44 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      569 H/s (16.54ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2383104/28688770 (8.31%)
+Rejected.........: 0/2383104 (0.00%)
+Restore.Point....: 1191552/14344385 (8.31%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: unicorn777 -> uniblood2
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 25 secs)
+Time.Estimated...: Wed Jun 28 13:09:11 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (10.71ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2386560/28688770 (8.32%)
+Rejected.........: 0/2386560 (0.00%)
+Restore.Point....: 1193280/14344385 (8.32%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: udunnowhoiam -> udderly7
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 26 secs)
+Time.Estimated...: Wed Jun 28 13:09:11 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (10.78ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2387840/28688770 (8.32%)
+Rejected.........: 0/2387840 (0.00%)
+Restore.Point....: 1193920/14344385 (8.32%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: tzinpo -> tywedawin
+Hardware.Mon.#1..: Util: 96%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 27 secs)
+Time.Estimated...: Wed Jun 28 13:09:12 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (10.80ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2388480/28688770 (8.33%)
+Rejected.........: 0/2388480 (0.00%)
+Restore.Point....: 1194240/14344385 (8.33%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2560-3072
+Candidate.Engine.: Device Generator
+Candidates.#1....: tyrtle -> tyron08
+Hardware.Mon.#1..: Util: 90%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 27 secs)
+Time.Estimated...: Wed Jun 28 13:09:17 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (11.26ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2388992/28688770 (8.33%)
+Rejected.........: 0/2388992 (0.00%)
+Restore.Point....: 1194496/14344385 (8.33%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: tyquasia12 -> tyonedante
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (34 mins, 28 secs)
+Time.Estimated...: Wed Jun 28 13:09:19 2023 (6 hours, 25 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (11.73ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2389504/28688770 (8.33%)
+Rejected.........: 0/2389504 (0.00%)
+Restore.Point....: 1194752/14344385 (8.33%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:3072-3584
+Candidate.Engine.: Device Generator
+Candidates.#1....: tylersean10905 -> tylerlee2
+Hardware.Mon.#1..: Util: 87%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (39 mins, 18 secs)
+Time.Estimated...: Wed Jun 28 13:10:46 2023 (6 hours, 22 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      566 H/s (10.02ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 2731392/28688770 (9.52%)
+Rejected.........: 0/2731392 (0.00%)
+Restore.Point....: 1365696/14344385 (9.52%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:3072-3584
+Candidate.Engine.: Device Generator
+Candidates.#1....: r.i.p.luke -> qx46sl67
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => r
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (58 mins, 50 secs)
+Time.Estimated...: Wed Jun 28 14:09:55 2023 (7 hours, 1 min)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      489 H/s (12.85ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 3928576/28688770 (13.69%)
+Rejected.........: 0/3928576 (0.00%)
+Restore.Point....: 1964288/14344385 (13.69%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:3072-3584
+Candidate.Engine.: Device Generator
+Candidates.#1....: brebre26 -> breastm!lk
+Hardware.Mon.#1..: Util: 91%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (1 hour, 32 mins)
+Time.Estimated...: Wed Jun 28 14:37:39 2023 (6 hours, 56 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      455 H/s (13.92ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 5954048/28688770 (20.75%)
+Rejected.........: 0/5954048 (0.00%)
+Restore.Point....: 2977024/14344385 (20.75%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2560-3072
+Candidate.Engine.: Device Generator
+Candidates.#1....: untyro -> untouchtable
+Hardware.Mon.#1..: Util: 91%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (2 hours, 19 mins)
+Time.Estimated...: Wed Jun 28 13:41:01 2023 (5 hours, 12 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      524 H/s (15.42ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 9062784/28688770 (31.59%)
+Rejected.........: 0/9062784 (0.00%)
+Restore.Point....: 4531392/14344385 (31.59%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: primavera9751909 -> primasuper105x
+Hardware.Mon.#1..: Util: 36%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (3 hours, 37 mins)
+Time.Estimated...: Wed Jun 28 13:19:35 2023 (3 hours, 32 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      564 H/s (25.68ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 14312192/28688770 (49.89%)
+Rejected.........: 0/14312192 (0.00%)
+Restore.Point....: 7156096/14344385 (49.89%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: jaron2007 -> jaromay
+Hardware.Mon.#1..: Util: 91%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 21 mins)
+Time.Estimated...: Wed Jun 28 13:19:49 2023 (2 hours, 48 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      557 H/s (9.99ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 17395328/28688770 (60.63%)
+Rejected.........: 0/17395328 (0.00%)
+Restore.Point....: 8697664/14344385 (60.63%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2560-3072
+Candidate.Engine.: Device Generator
+Candidates.#1....: delane17 -> delanair
+Hardware.Mon.#1..: Util: 86%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 31 mins)
+Time.Estimated...: Wed Jun 28 13:18:13 2023 (2 hours, 37 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      561 H/s (12.65ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 18097408/28688770 (63.08%)
+Rejected.........: 0/18097408 (0.00%)
+Restore.Point....: 9048704/14344385 (63.08%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: claudia123654 -> claudia.23
+Hardware.Mon.#1..: Util: 90%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 51 mins)
+Time.Estimated...: Wed Jun 28 13:07:45 2023 (2 hours, 7 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      604 H/s (10.26ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 19449984/28688770 (67.80%)
+Rejected.........: 0/19449984 (0.00%)
+Restore.Point....: 9724992/14344385 (67.80%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: becasj -> becani
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 51 mins)
+Time.Estimated...: Wed Jun 28 13:09:45 2023 (2 hours, 9 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      594 H/s (10.95ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 19452288/28688770 (67.80%)
+Rejected.........: 0/19452288 (0.00%)
+Restore.Point....: 9726144/14344385 (67.80%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2560-3072
+Candidate.Engine.: Device Generator
+Candidates.#1....: beboprob3 -> bebop25
+Hardware.Mon.#1..: Util: 90%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 57 mins)
+Time.Estimated...: Wed Jun 28 13:15:51 2023 (2 hours, 9 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (10.92ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 19876736/28688770 (69.28%)
+Rejected.........: 0/19876736 (0.00%)
+Restore.Point....: 9938368/14344385 (69.28%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: aszianixtah -> asz124
+Hardware.Mon.#1..: Util: 92%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 57 mins)
+Time.Estimated...: Wed Jun 28 13:15:52 2023 (2 hours, 9 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (10.78ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 19877376/28688770 (69.29%)
+Rejected.........: 0/19877376 (0.00%)
+Restore.Point....: 9938688/14344385 (69.29%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: asyari -> asya2007
+Hardware.Mon.#1..: Util: 88%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (4 hours, 57 mins)
+Time.Estimated...: Wed Jun 28 13:15:53 2023 (2 hours, 9 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      568 H/s (11.10ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 19878016/28688770 (69.29%)
+Rejected.........: 0/19878016 (0.00%)
+Restore.Point....: 9939008/14344385 (69.29%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2048-2560
+Candidate.Engine.: Device Generator
+Candidates.#1....: aswasone -> aswako06
+Hardware.Mon.#1..: Util: 93%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (5 hours, 19 mins)
+Time.Estimated...: Wed Jun 28 13:12:58 2023 (1 hour, 44 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      582 H/s (13.87ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 21374848/28688770 (74.51%)
+Rejected.........: 0/21374848 (0.00%)
+Restore.Point....: 10687424/14344385 (74.51%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: ROXYFOXY16 -> ROXY2321JA
+Hardware.Mon.#1..: Util: 89%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => s
+
+Session..........: hashcat
+Status...........: Running
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (5 hours, 19 mins)
+Time.Estimated...: Wed Jun 28 13:13:05 2023 (1 hour, 44 mins)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      581 H/s (14.25ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 21376000/28688770 (74.51%)
+Rejected.........: 0/21376000 (0.00%)
+Restore.Point....: 10688000/14344385 (74.51%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:2048-2560
+Candidate.Engine.: Device Generator
+Candidates.#1....: ROSSMILLER -> ROSSANA1995
+Hardware.Mon.#1..: Util: 84%
+
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => ^[[A
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => ^[[A
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => ^[[A
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => ^[[A
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+[s]tatus [p]ause [b]ypass [c]heckpoint [f]inish [q]uit => 
+Approaching final keyspace - workload adjusted.           
+
+                                                          
+Session..........: hashcat
+Status...........: Exhausted
+Hash.Mode........: 1800 (sha512crypt $6$, SHA512 (Unix))
+Hash.Target......: hashes.txt
+Time.Started.....: Wed Jun 28 06:09:08 2023 (7 hours, 4 mins)
+Time.Estimated...: Wed Jun 28 13:14:04 2023 (0 secs)
+Kernel.Feature...: Pure Kernel
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      588 H/s (13.18ms) @ Accel:64 Loops:512 Thr:1 Vec:4
+Recovered........: 1/2 (50.00%) Digests (total), 0/2 (0.00%) Digests (new), 1/2 (50.00%) Salts
+Progress.........: 28688770/28688770 (100.00%)
+Rejected.........: 0/28688770 (0.00%)
+Restore.Point....: 14344385/14344385 (100.00%)
+Restore.Sub.#1...: Salt:1 Amplifier:0-1 Iteration:4608-5000
+Candidate.Engine.: Device Generator
+Candidates.#1....: $HEX[042a0337c2a156616d6f732103] -> $HEX[042a0337c2a156616d6f732103]
+Hardware.Mon.#1..: Util: 87%
+
+Started: Wed Jun 28 06:09:05 2023
+Stopped: Wed Jun 28 13:14:06 2023

